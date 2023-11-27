@@ -1,0 +1,11 @@
+[Unit]
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=JLinkRemoteServerCLExe -Port 19020
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

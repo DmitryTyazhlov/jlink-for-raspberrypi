@@ -1,0 +1,11 @@
+[Unit]
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=JLinkRemoteServerCLExe -UseTunnel -TunnelServer jlink-europe.segger.com -TunnelBySN
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
